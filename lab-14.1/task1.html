@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashritha's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #ECF0F1;
+      color: #333333;
+      scroll-behavior: smooth;
+    }
+
+    /* Navigation */
+    header {
+      background-color: #2C3E50;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      color: #ECF0F1;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-left: 2rem;
+    }
+
+    .nav-links a {
+      color: #ECF0F1;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #3498DB;
+    }
+
+    /* Sections */
+    .section {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      color: #2C3E50;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .skill-item {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      font-weight: 700;
+      color: #2C3E50;
+    }
+
+    /* Contact Section */
+    .contact-info {
+      margin-top: 1rem;
+    }
+
+    .contact-info p {
+      margin: 0.5rem 0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #2C3E50;
+      color: #ECF0F1;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .section {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <div class="logo">Ashritha</div>
+      <ul class="nav-links">
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- About Me Section -->
+    <section id="about" class="section">
+      <h1>About Me</h1>
+      <p>Hi, I'm Ashritha, a 2nd-year B.Tech CSE-AIML student at SR University. I'm passionate about web development and artificial intelligence, currently learning and exploring skills in HTML, CSS, JavaScript, Bootstrap, React, MongoDB, and Node.js.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <h1>My Skills</h1>
+      <div class="skills-grid">
+        <div class="skill-item">HTML</div>
+        <div class="skill-item">CSS</div>
+        <div class="skill-item">JavaScript</div>
+        <div class="skill-item">Bootstrap</div>
+        <div class="skill-item">React</div>
+        <div class="skill-item">MongoDB</div>
+        <div class="skill-item">Node.js</div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <h1>Contact</h1>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:ashrithapulyala561@gmail.com">ashrithapulyala561@gmail.com</a></p>
+        <p>Phone: <a href="tel:+919014760854">9014760854</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Ashritha. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('.nav-links a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

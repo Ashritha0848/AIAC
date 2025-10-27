@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Store - Product Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #ECF0F1;
+      color: #333333;
+      scroll-behavior: smooth;
+    }
+
+    /* BEM Block: product */
+    .product {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* BEM Element: product__image */
+    .product__image {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .product__image:hover {
+      transform: scale(1.05);
+    }
+
+    /* BEM Element: product__details */
+    .product__details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* BEM Element: product__title */
+    .product__title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      color: #2C3E50;
+    }
+
+    /* BEM Element: product__price */
+    .product__price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #3498DB;
+    }
+
+    /* BEM Element: product__description */
+    .product__description {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* BEM Element: product__button */
+    .product__button {
+      padding: 0.75rem 1.5rem;
+      background-color: #3498DB;
+      color: #ECF0F1;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      align-self: start;
+    }
+
+    /* BEM Modifier: product__button--hover */
+    .product__button:hover {
+      background-color: #E74C3C;
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #2C3E50;
+      color: #ECF0F1;
+      text-align: center;
+      padding: 1rem;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .product {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+
+      .product__image {
+        max-width: 100%;
+      }
+
+      .product__title {
+        font-size: 1.8rem;
+      }
+
+      .product__price {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product__title {
+        font-size: 1.5rem;
+      }
+
+      .product__button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Product Section -->
+  <section class="product">
+    <img class="product__image" src="a.png" alt="Sample Product">
+    <div class="product__details">
+      <h1 class="product__title">Sample Product</h1>
+      <p class="product__price">$49.99</p>
+      <p class="product__description">This is a high-quality sample product designed to showcase the layout of an online store product page. Perfect for demonstrating responsive design and interactivity.</p>
+      <button class="product__button">Add to Cart</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Online Store. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Add to Cart alert
+    document.querySelector('.product__button').addEventListener('click', () => {
+      alert('Product added to cart!');
+    });
+  </script>
+</body>
+</html>

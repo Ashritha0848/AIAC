@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conference Registration Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #ECF0F1;
+      color: #333333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* BEM Block: form-container */
+    .form-container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* BEM Element: form-container__title */
+    .form-container__title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      color: #2C3E50;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    /* BEM Block: form */
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* BEM Element: form__group */
+    .form__group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    /* BEM Element: form__label */
+    .form__label {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2C3E50;
+    }
+
+    /* BEM Element: form__input, form__select */
+    .form__input,
+    .form__select {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-family: 'Roboto', sans-serif;
+      transition: border-color 0.3s ease;
+    }
+
+    .form__input:focus,
+    .form__select:focus {
+      outline: none;
+      border-color: #3498DB;
+    }
+
+    /* BEM Element: form__error */
+    .form__error {
+      color: #E74C3C;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    /* BEM Modifier: form__error--visible */
+    .form__error--visible {
+      display: block;
+    }
+
+    /* BEM Element: form__button */
+    .form__button {
+      padding: 0.75rem;
+      background-color: #3498DB;
+      color: #ECF0F1;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    /* BEM Modifier: form__button--hover */
+    .form__button:hover {
+      background-color: #E74C3C;
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #2C3E50;
+      color: #ECF0F1;
+      text-align: center;
+      padding: 1rem;
+      margin-top: auto;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 480px) {
+      .form-container {
+        margin: 1rem;
+        padding: 1rem;
+      }
+
+      .form-container__title {
+        font-size: 1.8rem;
+      }
+
+      .form__button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Form Section -->
+  <section class="form-container">
+    <h1 class="form-container__title">Conference Registration</h1>
+    <form class="form" id="registration-form" novalidate>
+      <div class="form__group">
+        <label for="name" class="form__label">Name</label>
+        <input type="text" id="name" class="form__input" aria-describedby="name-error" required>
+        <span id="name-error" class="form__error">Please enter a valid name (at least 2 characters).</span>
+      </div>
+      <div class="form__group">
+        <label for="email" class="form__label">Email</label>
+        <input type="email" id="email" class="form__input" aria-describedby="email-error" required>
+        <span id="email-error" class="form__error">Please enter a valid email address.</span>
+      </div>
+      <div class="form__group">
+        <label for="phone" class="form__label">Phone Number</label>
+        <input type="tel" id="phone" class="form__input" aria-describedby="phone-error" required>
+        <span id="phone-error" class="form__error">Please enter a valid phone number (10 digits).</span>
+      </div>
+      <div class="form__group">
+        <label for="session" class="form__label">Session Selection</label>
+        <select id="session" class="form__select" aria-describedby="session-error" required>
+          <option value="" disabled selected>Select a session</option>
+          <option value="keynote">Keynote Address</option>
+          <option value="ai-workshop">AI Workshop</option>
+          <option value="web-dev">Web Development Seminar</option>
+        </select>
+        <span id="session-error" class="form__error">Please select a session.</span>
+      </div>
+      <button type="submit" class="form__button">Register</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 SR University Conference. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Form validation
+    const form = document.getElementById('registration-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let isValid = true;
+
+      // Name validation
+      const name = document.getElementById('name');
+      const nameError = document.getElementById('name-error');
+      if (name.value.trim().length < 2) {
+        nameError.classList.add('form__error--visible');
+        isValid = false;
+      } else {
+        nameError.classList.remove('form__error--visible');
+      }
+
+      // Email validation
+      const email = document.getElementById('email');
+      const emailError = document.getElementById('email-error');
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email.value.trim())) {
+        emailError.classList.add('form__error--visible');
+        isValid = false;
+      } else {
+        emailError.classList.remove('form__error--visible');
+      }
+
+      // Phone validation
+      const phone = document.getElementById('phone');
+      const phoneError = document.getElementById('phone-error');
+      const phoneRegex = /^\d{10}$/;
+      if (!phoneRegex.test(phone.value.trim())) {
+        phoneError.classList.add('form__error--visible');
+        isValid = false;
+      } else {
+        phoneError.classList.remove('form__error--visible');
+      }
+
+      // Session validation
+      const session = document.getElementById('session');
+      const sessionError = document.getElementById('session-error');
+      if (!session.value) {
+        sessionError.classList.add('form__error--visible');
+        isValid = false;
+      } else {
+        sessionError.classList.remove('form__error--visible');
+      }
+
+      if (isValid) {
+        alert('Registration successful!');
+        form.reset();
+      }
+    });
+  </script>
+</body>
+</html>
