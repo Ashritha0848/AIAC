@@ -1,0 +1,6 @@
+post_id,text,sentiment,clean_text,clean_tokens
+1,I looove this product!!! 😍😍 Visit https://example.com for more info!,positive,looove product visit info,"['looove', 'product', 'visit', 'info']"
+2,Ugh... worst experience ever!! 😡 #fail,negative,ugh worst experience ever fail,"['ugh', 'worst', 'experience', 'ever', 'fail']"
+3,Check this out 👉 www.somethingcool.net 🎉,neutral,check,['check']
+4,I’m feeling sooo happppyyyyy!!!!! 😂😂😂,positive,feeling sooo happppyyyyy,"['feeling', 'sooo', 'happppyyyyy']"
+5,Great deal 💥🔥 Grab it now: http://dealz.com,positive,great deal grab now,"['great', 'deal', 'grab', 'now']"

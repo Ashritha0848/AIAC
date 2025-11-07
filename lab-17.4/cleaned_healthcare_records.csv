@@ -1,0 +1,9 @@
+name,age,gender,height_cm,blood_pressure,heart_rate,unnecessary_column
+Alice,29,Female,165,120.0,80.0,x
+Bob,34,Male,175,123.0,75.0,y
+Charlie,42,Male,168,130.0,79.5,z
+David,23,Female,180,110.0,85.0,a
+Eva,37,Female,158,125.0,90.0,b
+Frank,50,Male,170,123.0,79.5,c
+Grace,31,Female,160,118.0,77.0,d
+Henry,46,Male,182,135.0,70.0,e

@@ -1,0 +1,8 @@
+employee_id,name,salary,department,joining_date,job_role
+101,Alice,50000.0,HR,2022-01-10,Manager
+102,Bob,60000.0,hr,10/02/2021,Analyst
+103,Charlie,,Human Resources,,Executive
+104,David,45000.0,IT,2021-15-05,
+105,Eva,70000.0,it,March 3 2022,Developer
+106,Frank,,,2020/12/01,Analyst
+107,Grace,52000.0,Finance,07-08-2023,Clerk
