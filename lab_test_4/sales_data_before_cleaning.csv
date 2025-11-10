@@ -1,0 +1,11 @@
+transaction_id,customer_name,transaction_amount,region
+1,Alice,250.0,North
+2,Bob,,South
+3,Charlie,450.0,East
+4,,300.0,West
+5,Eve,500.0,
+6,Frank,,South
+7,,700.0,East
+8,Hannah,800.0,North
+9,Ivy,,West
+10,Jack,1000.0,
